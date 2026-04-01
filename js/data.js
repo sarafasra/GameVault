@@ -1,5 +1,5 @@
 // data.js
-export const games = [
+ const games = [
     {
         id: 1,
         title: "Cyberpunk 2077",
