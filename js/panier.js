@@ -17,6 +17,20 @@ function afficherPanier() {
         const div = document.createElement("div");
         div.classList.add("bg-white", "p-3", "rounded-xl", "flex", "justify-between", "items-center");
 
+        div.innerHTML = `
+            <div>
+             <img src='${game.image}' width='100' >
+                <h3 class="font-bold">${game.title}</h3>
+                <p>${game.price}$ x ${game.quantity}</p>
+               
+            </div>
+            <div class="flex gap-2">
+                <button class="plus text-black px-2  font-boldrounded" data-id="${game.id}">+</button>
+                <button class="minus text-black font-bold px-2 rounded" data-id="${game.id}">-</button>
+                <button class="supprimer bg-red-500 text-white px-2 rounded" data-id="${game.id}">Supprimer</button>
+            </div>
+        `;
+
         panierContainer.appendChild(div);
     }
 
