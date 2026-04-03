@@ -36,3 +36,31 @@ function afficherPanier() {
 
     totalEl.textContent = total.toFixed(2);
 }
+
+// gérer les boutons + / - / supprimer
+document.addEventListener("click", function(e) {
+    const id = parseInt(e.target.dataset.id);
+
+    if (e.target.classList.contains("plus")) {
+        for (let i = 0; i < panier.length; i++) if (panier[i].id === id) panier[i].quantity++;
+    }
+
+    if (e.target.classList.contains("minus")) {
+        for (let i = 0; i < panier.length; i++) if (panier[i].id === id && panier[i].quantity > 1) panier[i].quantity--;
+    }
+
+    if (e.target.classList.contains("supprimer")) {
+        panier = panier.filter(g => g.id !== id);
+    }
+
+    if (e.target.id === "commander") {
+        panier = [];
+        alert("Commande passée avec succès!");
+    }
+
+    localStorage.setItem("panier", JSON.stringify(panier));
+    afficherPanier();
+});
+
+// afficher le panier au chargement
+afficherPanier();
