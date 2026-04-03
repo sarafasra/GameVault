@@ -29,7 +29,34 @@ function afficherTousLesGames() {
 }
 
 afficherTousLesGames();
+function afficherParCategorie(category) {
+  container.innerHTML = "";
 
+  for (let i = 0; i < games.length; i++) {
+    const game = games[i];
+
+    if (category === "ALL" || game.category === category) {
+      const div = document.createElement("div");
+      div.classList.add("bg-white", "rounded-xl", "shadow", "p-3");
+
+      div.innerHTML = `
+        <img src="${game.image}" class="w-full h-40 object-cover rounded-lg" />
+        <h3 class="font-bold mt-2">${game.title}</h3>
+        <div>
+          <p>4.8⭐</p>
+          <p class="text-black-600 font-bold">${game.price}$</p>
+<button data-id="${game.id}" 
+class="add-to-cart bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md transition duration-200">
+Ajouter au panier
+</button>
+
+        </div>
+      `;
+
+      container.appendChild(div);
+    }
+  }
+}
 
 
 const searchInput = document.getElementById("searchInput");
