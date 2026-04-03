@@ -26,7 +26,7 @@ function afficherPanier() {
             </div>
             <div class="flex gap-2">
                 <button class="plus text-black px-2  font-boldrounded" data-id="${game.id}">+</button>
-
+                <button class="minus text-black font-bold px-2 rounded" data-id="${game.id}">-</button>
             </div>
         `;
 
