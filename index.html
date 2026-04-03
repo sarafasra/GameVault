@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+            rel="stylesheet"
+        />
     <link href="./css/output.css" rel="stylesheet">
 </head>
 
@@ -12,30 +16,32 @@
     <header>
         <h1 class="text-2xl font-bold text-center mt-4">Discover Best Game</h1>
         <div class="p-4">
-            <input       id="searchInput" type="text" placeholder="Search..." class="w-full p-3 rounded bg-gray-200" />
+            <input id="searchInput" type="text" placeholder="Search..." class="w-full p-3 rounded bg-gray-200" />
         </div>
         <div class="px-4">
             <img src="image1.jpg" class="rounded-xl w-full h-44 object-cover" />
         </div>
         <div class="flex flex-col gap-7 overflow-x-auto">
-       <div class="flex   gap-1">
-        <p  class="font-bold p-3 text-xl">Categories</p>
-
-                <button class="px-4 py-2 rounded-[10px] w-[60px] h-[40px] bg-green-600 text-white ml-2 "   aria-label="Afficher tous les articles">ALL</button>
-                <button class="px-4 py-2 rounded-[10px] w-[70px] h-[40px] border ml-2"   aria-label="Menu"></i>RBG</button>
-                <button class="px-4 py-2 rounded-[10px] w-[70px] h-[40px] border ml-2"    aria-label="Search">Action</button>
-                <button class="px-4 py-2 rounded-[10px] w-[70px] h-[40px]  border ml-2"  aria-label="Like">Sports</button>
-                <button class="px-4 py-2 rounded-[10px] w-[90px] h-[40px] border ml-2"  aria-label="Search">Adventir</button>
-                <button class="px-4 py-2 rounded-[10px] w-[70px] h-[40px] border" aria-label="Menu">Shooter</button>
+            <div class="flex flex-col gap-1">
+                <p class="font-bold p-3 text-xl">Categories</p>
+                <div class="flex gap-2 px-2 overflow-x-auto">
+                    <button class="cat-btn px-4 py-2 rounded-[10px] bg-green-600 text-white" data-cat="ALL">ALL</button>
+<button class="cat-btn px-4 py-2 rounded-[10px] border" data-cat="RPG">RPG</button>
+<button class="cat-btn px-4 py-2 rounded-[10px] border" data-cat="Action">Action</button>
+<button class="cat-btn px-4 py-2 rounded-[10px] border" data-cat="Sport">Sport</button>
+<button class="cat-btn px-4 py-2 rounded-[10px] border" data-cat="FPS">FPS</button>
+                </div>
             </div>
-            </div>
-            <p class="font-bold p-3 text-xl">Featured Games</p>
+        </div>
+        <p class="font-bold p-3 text-xl">Featured Games</p>
+        <a href="panier.html" class="fixed top-4 right-4 bg-black text-white px-4 py-2 rounded transition">
+<i class="ri-shopping-cart-2-fill"></i></a>
     </header>
-  
-         <div id="games-container" class="grid grid-cols-1 md:grid-cols-4 gap-6 p-4"></div>
+
+    <div id="games-container" class="grid grid-cols-1 md:grid-cols-4 gap-6 p-4"></div>
 
 
-   
+
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
 </body>
