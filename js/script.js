@@ -29,6 +29,7 @@ function afficherTousLesGames() {
 }
 
 afficherTousLesGames();
+
 function afficherParCategorie(category) {
   container.innerHTML = "";
 
@@ -57,7 +58,16 @@ Ajouter au panier
     }
   }
 }
+let btn = document.querySelectorAll(".cat-btn");
 
+
+btn.forEach(button => {
+  button.addEventListener("click",(e)=>{
+    let cat =e.target.dataset.cat;
+    afficherParCategorie(cat)
+})
+  
+});
 
 const searchInput = document.getElementById("searchInput");
 
@@ -85,32 +95,32 @@ searchInput.addEventListener("input", function () {
     }
   }
 });
-document.addEventListener("click", function(e) {
-    if (e.target.classList.contains("add-to-cart")) {
-        const id = parseInt(e.target.dataset.id);
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("add-to-cart")) {
+    const id = parseInt(e.target.dataset.id);
 
-        let gameTrouve = null;
-        for (let i = 0; i < games.length; i++) {
-            if (games[i].id === id) {
-                gameTrouve = games[i];
-                break;
-            }
-        }
-
-        let trouve = false;
-        for (let i = 0; i < panier.length; i++) {
-            if (panier[i].id === id) {
-                panier[i].quantity += 1;
-                trouve = true;
-                break;
-            }
-        }
-
-        if (!trouve) {
-            panier.push({ ...gameTrouve, quantity: 1 });
-        }
-
-        localStorage.setItem("panier", JSON.stringify(panier));
-
+    let gameTrouve = null;
+    for (let i = 0; i < games.length; i++) {
+      if (games[i].id === id) {
+        gameTrouve = games[i];
+        break;
+      }
     }
+
+    let trouve = false;
+    for (let i = 0; i < panier.length; i++) {
+      if (panier[i].id === id) {
+        panier[i].quantity += 1;
+        trouve = true;
+        break;
+      }
+    }
+
+    if (!trouve) {
+      panier.push({ ...gameTrouve, quantity: 1 });
+    }
+
+    localStorage.setItem("panier", JSON.stringify(panier));
+
+  }
 });

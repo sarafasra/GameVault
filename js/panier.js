@@ -34,7 +34,6 @@ function afficherPanier() {
         panierContainer.appendChild(div);
     }
 
-    totalEl.textContent = total.toFixed(2);
 }
 
 // gérer les boutons + / - / supprimer
@@ -42,11 +41,13 @@ document.addEventListener("click", function(e) {
     const id = parseInt(e.target.dataset.id);
 
     if (e.target.classList.contains("plus")) {
-        for (let i = 0; i < panier.length; i++) if (panier[i].id === id) panier[i].quantity++;
+        for (let i = 0; i < panier.length; i++) 
+        if (panier[i].id === id) panier[i].quantity++;
     }
 
     if (e.target.classList.contains("minus")) {
-        for (let i = 0; i < panier.length; i++) if (panier[i].id === id && panier[i].quantity > 1) panier[i].quantity--;
+        for (let i = 0; i < panier.length; i++) 
+        if (panier[i].id === id && panier[i].quantity > 1) panier[i].quantity--;
     }
 
     if (e.target.classList.contains("supprimer")) {
