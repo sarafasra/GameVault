@@ -92,6 +92,7 @@ searchInput.addEventListener("input", function () {
       `;
 
       container.appendChild(div);
+      
     }
   }
 });
