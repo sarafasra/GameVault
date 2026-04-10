@@ -32,6 +32,7 @@ function afficherPanier() {
         `;
 
         panierContainer.appendChild(div);
+        totalEl.textContent= total.toFixed(2);
     }
 
 }
